@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white dark:bg-dark-bg text-slate-900 dark:text-slate-100;
+  }
+
+  h1 {
+    @apply font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight mb-6;
+  }
+
+  h2 {
+    @apply font-bold text-2xl sm:text-3xl tracking-tight mb-4;
+  }
+
+  h3 {
+    @apply font-semibold text-xl sm:text-2xl mb-3;
+  }
+
+  p {
+    @apply leading-relaxed text-slate-700 dark:text-slate-300;
+  }
+
+  code {
+    @apply font-mono text-sm bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded;
+  }
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-dark-surface;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-600 dark:bg-primary-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-700 dark:bg-primary-600;
+}
+
+/* Utility animations */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(
+    to right,
+    #e2e8f0 0%,
+    #cbd5e1 50%,
+    #e2e8f0 100%
+  );
+  background-size: 1000px 100%;
+}
+
+.dark .shimmer {
+  background: linear-gradient(
+    to right,
+    #334155 0%,
+    #475569 50%,
+    #334155 100%
+  );
+}
